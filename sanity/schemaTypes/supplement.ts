@@ -1,45 +1,16 @@
-"use client";
+const supplement = {
+  name: "supplementReview",
+  title: "Supplement Review",
+  type: "document",
+  fields: [
+    { name: "title", title: "Title", type: "string" },
+    { name: "slug", title: "Slug", type: "slug", options: { source: "title" } },
+    { name: "excerpt", title: "Excerpt", type: "text" },
+    { name: "rating", title: "Rating", type: "number" },
+    { name: "content", title: "Content", type: "text" },
+    { name: "pros", title: "Pros", type: "array", of: [{ type: "string" }] },
+    { name: "cons", title: "Cons", type: "array", of: [{ type: "string" }] },
+  ],
+};
 
-import { useState } from "react";
-
-export default function QuizPage() {
-  const [step, setStep] = useState(1);
-  const [email, setEmail] = useState("");
-
-  return (
-    <div style={{ padding: 40 }}>
-      <h1>Diabetes Supplement Quiz</h1>
-
-      {step === 1 && (
-        <>
-          <p>What type of diabetes do you have?</p>
-          <button onClick={() => setStep(2)}>Type 2</button>
-          <button onClick={() => setStep(2)}>Prediabetes</button>
-        </>
-      )}
-
-      {step === 2 && (
-        <>
-          <p>Enter email to see results</p>
-
-          <input
-            placeholder="Email"
-            onChange={(e) => setEmail(e.target.value)}
-          />
-
-          <button onClick={() => setStep(3)}>
-            Show Results
-          </button>
-        </>
-      )}
-
-      {step === 3 && (
-        <>
-          <h2>Recommended Supplements</h2>
-          <p>Berberine</p>
-          <p>Alpha Lipoic Acid</p>
-        </>
-      )}
-    </div>
-  );
-}
+export default supplement;

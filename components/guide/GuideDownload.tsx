@@ -1,12 +1,8 @@
-import { NextResponse } from "next/server";
-
-export async function POST(req: Request) {
-
-  const body = await req.json();
-
-  console.log("New Email:", body.email);
-
-  return NextResponse.json({
-    success: true
-  });
+export default function GuideDownload() {
+  return (
+    <div className="p-8">
+      <h1 className="text-3xl font-bold mb-4">Free Diabetes Guide</h1>
+      <p>Download your free guide below.</p>
+    </div>
+  );
 }

@@ -1,9 +1,11 @@
-import user from "./user";
-import guide from "./guide";
-import supplement from "./supplement";
+const user = {
+  name: "user",
+  title: "User",
+  type: "document",
+  fields: [
+    { name: "name", title: "Name", type: "string" },
+    { name: "email", title: "Email", type: "string" },
+  ],
+};
 
-export const schemaTypes = [
-  user,
-  guide,
-  supplement
-];
+export default user;

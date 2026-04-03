@@ -1,14 +1,8 @@
-import { getServerSession } from "next-auth";
-import { redirect } from "next/navigation";
-import DashboardHome from "@/components/dashboard/DashboardHome";
-
-export default async function DashboardPage() {
-
-  const session = await getServerSession();
-
-  if (!session) {
-    redirect("/login");
-  }
-
-  return <DashboardHome />;
+export default function LoginPage() {
+  return (
+    <main className="min-h-screen p-8">
+      <h1 className="text-3xl font-bold">Login</h1>
+      <p>Coming soon.</p>
+    </main>
+  );
 }
