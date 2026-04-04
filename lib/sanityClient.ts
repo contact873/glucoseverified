@@ -1,38 +1,8 @@
-export default {
-  name: "supplement",
-  title: "Supplement",
-  type: "document",
-  fields: [
-    {
-      name: "name",
-      title: "Supplement Name",
-      type: "string",
-    },
-    {
-      name: "slug",
-      type: "slug",
-      options: { source: "name" },
-    },
-    {
-      name: "description",
-      type: "text",
-    },
-    {
-      name: "evidence",
-      type: "string",
-    },
-    {
-      name: "benefits",
-      type: "array",
-      of: [{ type: "string" }],
-    },
-    {
-      name: "affiliateLink",
-      type: "url",
-    },
-    {
-      name: "category",
-      type: "string",
-    }
-  ]
-};
+import { createClient } from '@sanity/client'
+const client = createClient({
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'lofyvk3d',
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
+  useCdn: true,
+  apiVersion: '2024-01-01',
+})
+export default client
